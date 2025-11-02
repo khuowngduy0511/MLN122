@@ -1,18 +1,17 @@
 {
-  "name": "vite-react-typescript-starter",
+  "name": "mln122-bingo-game",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0",
+    "npm": ">=9.0.0"
   },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "start": "vite",
-    "typecheck": "tsc --noEmit -p tsconfig.app.json"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",
