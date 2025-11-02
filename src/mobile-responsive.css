@@ -1,0 +1,284 @@
+/* =====================================================
+   MOBILE RESPONSIVE STYLES FOR BINGO GAME
+   ===================================================== */
+
+/* Mobile First: Base styles for mobile */
+@media (max-width: 768px) {
+  
+  /* ============= GLOBAL ============= */
+  body {
+    font-size: 14px;
+  }
+
+  /* Giảm padding cho mobile */
+  .min-h-screen {
+    padding: 0.5rem !important;
+  }
+
+  /* ============= HOME PAGE (App.tsx) ============= */
+  
+  /* Title nhỏ hơn trên mobile */
+  .text-5xl, .text-6xl {
+    font-size: 2rem !important; /* 32px */
+  }
+
+  .text-4xl {
+    font-size: 1.75rem !important; /* 28px */
+  }
+
+  .text-3xl {
+    font-size: 1.5rem !important; /* 24px */
+  }
+
+  .text-2xl {
+    font-size: 1.25rem !important; /* 20px */
+  }
+
+  .text-xl {
+    font-size: 1rem !important; /* 16px */
+  }
+
+  /* Cards MC/Player trên mobile */
+  .grid.md\\:grid-cols-2 {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Giảm padding cho cards */
+  .rounded-2xl.p-8 {
+    padding: 1.5rem !important;
+  }
+
+  /* Icon nhỏ hơn */
+  .w-24.h-24 {
+    width: 4rem !important; /* 64px */
+    height: 4rem !important;
+  }
+
+  .w-12.h-12 {
+    width: 2.5rem !important; /* 40px */
+    height: 2.5rem !important;
+  }
+
+  /* Modal info responsive */
+  .max-w-2xl {
+    max-width: 100% !important;
+  }
+
+  .p-6 {
+    padding: 1rem !important;
+  }
+
+  /* ============= PLAYER INTERFACE ============= */
+  
+  /* Header join form */
+  .text-4xl.font-black {
+    font-size: 1.5rem !important;
+  }
+
+  /* Room code input */
+  input.text-3xl {
+    font-size: 1.25rem !important;
+    padding: 0.75rem !important;
+  }
+
+  /* Player name heading */
+  h2.text-3xl {
+    font-size: 1.5rem !important;
+  }
+
+  /* BINGO BOARD - Quan trọng nhất! */
+  .grid.grid-cols-5 {
+    gap: 0.25rem !important; /* Giảm gap từ 12px xuống 4px */
+  }
+
+  /* Mỗi ô trong bảng 5x5 */
+  .grid.grid-cols-5 > button {
+    min-height: 3.5rem !important; /* 56px thay vì 80px */
+    padding: 0.25rem !important;
+    font-size: 0.65rem !important; /* Chữ nhỏ hơn */
+    line-height: 1.1 !important;
+  }
+
+  /* Stats bar */
+  .flex.items-center.gap-3 {
+    gap: 0.5rem !important;
+    padding: 0.5rem 0.75rem !important;
+    font-size: 1rem !important;
+  }
+
+  /* Timer countdown */
+  .text-5xl.font-black {
+    font-size: 2.5rem !important;
+  }
+
+  /* Question text */
+  .text-2xl.font-black {
+    font-size: 1.125rem !important;
+  }
+
+  /* BINGO button */
+  button.py-7.text-3xl {
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
+    font-size: 1.5rem !important;
+  }
+
+  /* ============= MC INTERFACE ============= */
+  
+  /* MC header */
+  .text-6xl {
+    font-size: 2rem !important;
+  }
+
+  /* Room code display */
+  .text-8xl {
+    font-size: 3rem !important;
+  }
+
+  /* Player list */
+  .grid.md\\:grid-cols-2.lg\\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Question display */
+  .text-3xl.font-black {
+    font-size: 1.25rem !important;
+  }
+
+  /* Buttons spacing */
+  .gap-4 {
+    gap: 0.5rem !important;
+  }
+
+  /* AI Report Modal */
+  .max-w-6xl {
+    max-width: 100% !important;
+    margin: 0.5rem !important;
+  }
+
+  [class*="max-h-"] {
+    max-height: 90vh !important;
+  }
+
+  /* Charts trong AI report */
+  .recharts-wrapper {
+    width: 100% !important;
+    height: 250px !important;
+  }
+
+  /* ============= UTILITY CLASSES ============= */
+  
+  /* Hide elements on mobile if needed */
+  .hidden-mobile {
+    display: none !important;
+  }
+
+  /* Stack vertically on mobile */
+  .flex.gap-6 {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+
+  /* Full width buttons on mobile */
+  button {
+    width: 100% !important;
+  }
+
+  /* Scroll container for wide content */
+  .overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ============= TABLET (768px - 1024px) ============= */
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  /* BINGO board size for tablet */
+  .grid.grid-cols-5 > button {
+    min-height: 4.5rem !important; /* 72px */
+    font-size: 0.8rem !important;
+  }
+
+  .text-3xl {
+    font-size: 1.75rem !important;
+  }
+
+  .text-2xl {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* ============= SMALL MOBILE (< 375px) ============= */
+@media (max-width: 374px) {
+  
+  /* Extra small phones */
+  .grid.grid-cols-5 > button {
+    min-height: 3rem !important; /* 48px */
+    font-size: 0.55rem !important;
+  }
+
+  .text-5xl, .text-6xl {
+    font-size: 1.5rem !important;
+  }
+
+  .text-3xl {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* ============= LANDSCAPE MODE ============= */
+@media (max-height: 500px) and (orientation: landscape) {
+  
+  /* Reduce vertical spacing in landscape */
+  .mb-6, .mb-8, .mb-12 {
+    margin-bottom: 0.5rem !important;
+  }
+
+  .py-6, .py-8 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  /* Make board fit in landscape */
+  .grid.grid-cols-5 > button {
+    min-height: 2.5rem !important;
+    font-size: 0.6rem !important;
+  }
+}
+
+/* ============= FIX SPECIFIC ISSUES ============= */
+
+/* Prevent text overflow */
+@media (max-width: 768px) {
+  * {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Prevent horizontal scroll */
+  body, html {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* Make sure containers don't overflow */
+  .container, .max-w-4xl, .max-w-6xl {
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Fix info button position on mobile */
+  .fixed.bottom-6.right-6 {
+    bottom: 1rem !important;
+    right: 1rem !important;
+    width: 3rem !important;
+    height: 3rem !important;
+  }
+
+  .fixed.bottom-6.right-6 svg {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+  }
+}
