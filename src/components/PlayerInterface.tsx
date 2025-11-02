@@ -12,9 +12,9 @@ export default function PlayerInterface() {
   const [selectedCells, setSelectedCells] = useState<number[][]>([]);
   const [wrongCells, setWrongCells] = useState<number[][]>([]); // Ô sai tạm thời
   const [canCallBingo, setCanCallBingo] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(36);
+  const [timeLeft, setTimeLeft] = useState(30);
   const [lockedTerms, setLockedTerms] = useState<string[]>([]); // Các term bị khóa
-  const [canSelect, setCanSelect] = useState(true); // Cho phép chọn trong 36s
+  const [canSelect, setCanSelect] = useState(true); // Cho phép chọn trong 30s
   const [totalPlayers, setTotalPlayers] = useState(0); // Tổng số người chơi
 
   useEffect(() => {
@@ -55,14 +55,14 @@ export default function PlayerInterface() {
               .then();
           }
           
-          // Tính thời gian còn lại (36 giây)
+          // Tính thời gian còn lại (30 giây)
           const startTime = new Date(updatedRoom.question_start_time!).getTime();
           const now = Date.now();
           const elapsed = Math.floor((now - startTime) / 1000);
-          const remaining = Math.max(0, 36 - elapsed);
+          const remaining = Math.max(0, 30 - elapsed);
           setTimeLeft(remaining);
           
-          // Nếu hết 36s thì khóa
+          // Nếu hết 30s thì khóa
           if (remaining === 0) {
             setCanSelect(false);
           }
@@ -93,10 +93,10 @@ export default function PlayerInterface() {
       const startTime = new Date(room.question_start_time!).getTime();
       const now = Date.now();
       const elapsed = Math.floor((now - startTime) / 1000);
-      const remaining = Math.max(0, 36 - elapsed);
+      const remaining = Math.max(0, 30 - elapsed);
       setTimeLeft(remaining);
       
-      // Hết 36 giây thì khóa không cho chọn
+      // Hết 30 giây thì khóa không cho chọn
       if (remaining === 0) {
         setCanSelect(false);
       }
@@ -317,7 +317,7 @@ export default function PlayerInterface() {
   async function toggleCell(row: number, col: number) {
     if (!player || !room || room.status !== 'playing') return;
     
-    // Kiểm tra nếu hết 36 giây - không cho chọn nữa
+    // Kiểm tra nếu hết 30 giây - không cho chọn nữa
     if (!canSelect || room.answer_revealed) return;
     
     const term = board[row][col];
@@ -407,7 +407,7 @@ export default function PlayerInterface() {
       return 'bg-gray-200 text-gray-600 font-semibold cursor-not-allowed line-through opacity-60';
     }
 
-    // Hết 36 giây - không cho chọn, nhưng vẫn hiển thị màu đã chọn
+    // Hết 30 giây - không cho chọn, nhưng vẫn hiển thị màu đã chọn
     if (!canSelect || room?.answer_revealed) {
       if (isSelected) {
         return 'bg-blue-400 text-white font-bold shadow-md cursor-not-allowed';
@@ -415,12 +415,12 @@ export default function PlayerInterface() {
       return 'bg-gray-100 text-gray-900 font-semibold cursor-not-allowed opacity-70';
     }
 
-    // Ô đã chọn nhưng chưa biết đúng/sai (còn trong 36s)
+    // Ô đã chọn nhưng chưa biết đúng/sai (còn trong 30s)
     if (isSelected) {
       return 'bg-blue-400 text-white font-bold shadow-md hover:bg-blue-500';
     }
 
-    // Ô bình thường (còn trong 36s)
+    // Ô bình thường (còn trong 30s)
     return 'bg-gray-100 text-gray-900 font-semibold hover:bg-gray-200 hover:shadow-md transition-all';
   }
 
@@ -594,7 +594,7 @@ export default function PlayerInterface() {
                 <div className="bg-blue-500 border-3 border-blue-600 rounded-xl p-4 text-center shadow-lg">
                   <span className="text-white font-black text-lg">
                     {canSelect 
-                      ? '💡 Hãy chọn đáp án trên bảng! (36 giây)'
+                      ? '💡 Hãy chọn đáp án trên bảng!'
                       : '⏸️ Hết giờ! Chờ MC công bố đáp án...'}
                   </span>
                 </div>

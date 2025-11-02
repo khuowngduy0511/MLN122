@@ -77,7 +77,7 @@ function App() {
             <p>1. <strong>MC</strong> tạo phòng và nhận mã phòng 6 ký tự</p>
             <p>2. <strong>Người chơi</strong> nhập mã phòng để tham gia</p>
             <p>3. Mỗi người nhận bảng BINGO 5×5 với các thuật ngữ kinh tế ngẫu nhiên</p>
-            <p>4. MC đọc câu hỏi/gợi ý → Người chơi có 36 giây để nhấn vào ô đáp án tương ứng</p>
+            <p>4. MC đọc câu hỏi/gợi ý → Người chơi có 30 giây để nhấn vào ô đáp án tương ứng</p>
             <p>5. Khi có 5 ô thẳng hàng (ngang hoặc dọc) → Nhấn <strong>"MÁC BINGO!"</strong></p>
             <p>6. MC xác nhận người thắng cuộc 🏆</p>
           </div>

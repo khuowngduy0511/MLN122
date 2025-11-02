@@ -11,7 +11,7 @@ export default function MCInterface() {
   const [allTerms, setAllTerms] = useState<GameTerm[]>([]);
   const [usedTerms, setUsedTerms] = useState<Set<string>>(new Set());
   const [copied, setCopied] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(36);
+  const [timeLeft, setTimeLeft] = useState(30);
   const [timerActive, setTimerActive] = useState(false);
   const [showAIReport, setShowAIReport] = useState(false);
   const [aiReportData, setAIReportData] = useState<any>(null);
@@ -162,8 +162,8 @@ export default function MCInterface() {
       question_start_time: new Date().toISOString()
     });
     
-    // Reset và bắt đầu timer (36 giây)
-    setTimeLeft(36);
+    // Reset và bắt đầu timer (30 giây)
+    setTimeLeft(30);
     setTimerActive(true);
   }
 
