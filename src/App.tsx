@@ -130,15 +130,19 @@ function App() {
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="font-semibold min-w-[120px]">Lớp:</span>
-                    <span>Nhóm 1</span>
+                    <span>Nhóm 1 - Half2_MC1806</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="font-semibold min-w-[120px]">Thành viên:</span>
                     <div className="flex-1">
-                      <p>• Trần Hạ Khương Duy - MSSV: QE180075</p>
+                      <p>• Trần Hạ Khương Duy - MSSV: QE180075 (Leader)</p>
+                      <p>(phát triển logic game, tích hợp AI)</p>
                       <p>• Nguyễn Đào Bách - MSSV: QE180006</p>
+                      <p>(thiết kế giao diện, thiết kế database)</p>
                       <p>• Đoàn Hiểu Minh - MSSV: SE183556</p>
-                      <p>• Bùi Anh Kha - MSSV: SE181730</p>
+                       <p>(lên ý tưởng, soạn nội dung, chuẩn bị câu hỏi)</p>
+                      <p>• Bùi Anh Kha - MSSV: SE181730 </p>
+                      <p>(làm tài liệu, hỗ trợ phát triển web)</p>
                     </div>
                   </div>
                 </div>

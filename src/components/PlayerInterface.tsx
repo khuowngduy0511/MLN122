@@ -46,7 +46,7 @@ export default function PlayerInterface() {
           setWrongCells([]); // Reset ô sai khi có câu mới
           setCanSelect(true); // Cho phép chọn lại
           
-          // XÓA wrong_cells trong database để không bị sync lại
+          // XÓA wrong_cells trong database để UI người chơi không bị đỏ
           if (player) {
             supabase
               .from('players')
@@ -651,9 +651,21 @@ export default function PlayerInterface() {
           )}
 
           <div className="mt-6 text-center text-lg font-bold text-gray-700 bg-gray-100 py-4 rounded-xl">
-            Đúng: <span className="text-green-600 font-black text-xl">{getCorrectCount()}</span> |
-            Sai: <span className="text-red-600 font-black text-xl">{wrongCells.length}</span> |
-            Đã chọn: <span className="text-blue-600 font-black text-xl">{selectedCells.length}</span>
+            {(() => {
+              const correctCount = getCorrectCount();
+              const totalQuestions = lockedTerms.length; // Tổng số câu đã hỏi
+              const wrongCount = Math.max(0, totalQuestions - correctCount); // Số câu sai
+              
+              return (
+                <>
+                  Đúng: <span className="text-green-600 font-black text-xl">{correctCount}/{totalQuestions}</span>
+                  {' | '}
+                  Sai: <span className="text-red-600 font-black text-xl">{wrongCount}</span>
+                  {' | '}
+                  Đã chọn: <span className="text-blue-600 font-black text-xl">{selectedCells.length}</span>
+                </>
+              );
+            })()}
           </div>
         </div>
       </div>

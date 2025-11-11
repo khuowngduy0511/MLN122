@@ -995,8 +995,9 @@ ${aiReportData.recommendations}
                         return term && room.locked_terms?.includes(term);
                       }).length;
                       
-                      // Số ô sai: wrong_cells
-                      const wrongCount = player.wrong_cells?.length || 0;
+                      // Tính số câu sai: Tổng câu đã hỏi - Số câu đúng
+                      const totalQuestions = room.locked_terms?.length || 0;
+                      const wrongCount = Math.max(0, totalQuestions - correctCount);
                       
                       // Số ô đã chọn
                       const selectedCount = player.selected_cells.length;
